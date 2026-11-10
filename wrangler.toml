@@ -1,4 +1,58 @@
 
-name = "nakornping-line-bot"
+# ============================================================
+# NAKORN PING DOCUMENT - CLOUDFLARE WORKER
+# ============================================================
+
+name = "nakornping-document"
 main = "worker.js"
-compatibility_date = "2026-11-09"
+
+# Cloudflare Workers compatibility
+compatibility_date = "2026-11-10"
+compatibility_flags = []
+
+# ============================================================
+# WORKER SETTINGS
+# ============================================================
+
+workers_dev = true
+
+# ============================================================
+# OBSERVABILITY
+# ============================================================
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+invocation_logs = true
+head_sampling_rate = 1
+
+# ============================================================
+# ENVIRONMENT VARIABLES
+# ============================================================
+
+[vars]
+APP_NAME = "Nakornping Document Worker"
+APP_VERSION = "2.0.1"
+WEBHOOK_PATH = "/webhook"
+
+# ============================================================
+# SECURITY NOTES
+# ============================================================
+#
+# DO NOT put secrets in this file.
+#
+# Configure these through Cloudflare Dashboard:
+#
+# LINE_CHANNEL_SECRET  = Secret
+# GAS_WEBHOOK_SECRET   = Secret
+# GAS_WEB_APP_URL      = Variable
+#
+# Dashboard:
+# Workers & Pages
+#   > nakornping-document
+#   > Settings
+#   > Variables and Secrets
+#
+# ============================================================
